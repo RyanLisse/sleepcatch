@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Brainstorm
+![Ai Final Project](https://github.com/RyanLisse/encodeclub-final-project-/assets/57917217/85f96b58-a812-4d5f-babb-3357852f9656)
+
+
+
 
 ## Getting Started
 
