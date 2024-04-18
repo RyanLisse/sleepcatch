@@ -1,9 +1,7 @@
-import {Button} from "@/components/ui/button";
 import {getUserAuth} from "@/lib/auth/utils";
-import Link from "next/link";
-import NewCard from "@/components/NewCard";
-import {BentoGrid} from "@/components/bento-grid";
+
 import Griddy from "@/components/Griddy";
+import Chat from "@/components/ChatPage";
 
 export default async function Home() {
     const userAuth = await getUserAuth();
@@ -11,6 +9,7 @@ export default async function Home() {
         <main className="space-y-6">
 
             <Griddy />
+            <Chat />
         </main>
     );
 }
