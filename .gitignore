@@ -27,7 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env*
+#.env
 
 bun.lockb
 # vercel
@@ -36,3 +36,4 @@ bun.lockb
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+!/.env
