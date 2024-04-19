@@ -55,39 +55,39 @@ src/app/: This directory contains the main application logic, including pages an
 src/components/: This directory houses reusable UI components that can be used throughout the application, helping maintain consistency and reduce code duplication.
 src/hooks/: Includes custom React hooks, such as useFetchArticles for fetching news articles, centralizing and reusing logic across components.
 src/lib/: Contains utility functions and libraries, including authentication helpers, supporting the application's backend interactions and configurations.
-.
-├── src
-│   ├── app
-│   │   ├── api
-│   │   │   └── get_summary
+
+sleepcatch/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── get_summary/
 │   │   │       └── route.ts
 │   │   ├── globals.css
 │   │   └── layout.tsx
-│   ├── components
+│   ├── components/
 │   │   ├── Griddy.tsx
 │   │   ├── Navbar.tsx
 │   │   ├── Sidebar.tsx
 │   │   ├── SidebarItems.tsx
 │   │   └── ThemeProvider.tsx
-│   ├── config
+│   ├── config/
 │   │   └── nav.ts
-│   ├── hooks
+│   ├── hooks/
 │   │   └── useFetchArticles.ts
-│   ├── lib
-│       ├── db
-│       │   ├── migrations
+│   └── lib/
+│       ├── db/
+│       │   ├── migrations/
 │       │   │   ├── 0000_silky_malice.sql
-│       │   │   └── meta
+│       │   │   └── meta/
 │       │   │       └── 0000_snapshot.json
 │       │   └── migrate.ts
 │       └── utils.ts
-│   
-│       
 ├── .gitignore
 ├── package.json
 ├── postcss.config.mjs
 ├── tailwind.config.ts
 └── tsconfig.json
+
 
 ## 🌐 Deploy
 
