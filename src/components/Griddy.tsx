@@ -19,11 +19,11 @@ export default function Griddy() {
           title={article.title}
           description={article.description}
           header={
-            <div className="flex justify-center items-center w-full h-48 bg-gray-200 rounded-xl overflow-hidden">
+            <div className="flex justify-center items-center w-full h-48 rounded-xl overflow-hidden">
               <img src={article.urlToImage || 'https://via.placeholder.com/150'} alt="Article" className="w-full h-full object-cover"/>
             </div>
           }
-          className={cn("flex flex-col space-y-4 p-4", i === 3 || i === 6 ? "md:col-span-2" : "")}
+          className={cn("flex flex-col space-y-4 p-4 shadowgit ", i === 3 || i === 6 ? "md:col-span-2" : "")}
         />
       )) : Array(4).fill(null).map((_, index) => (
         <BentoGridItem
