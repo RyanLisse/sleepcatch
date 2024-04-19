@@ -37,3 +37,6 @@ bun.lockb
 *.tsbuildinfo
 next-env.d.ts
 !/.env
+
+#vscode
+.vscode
