@@ -23,7 +23,7 @@ export default function Griddy() {
               <img src={article.urlToImage || 'https://via.placeholder.com/150'} alt="Article" className="w-full h-full object-cover"/>
             </div>
           }
-          className={cn("flex flex-col space-y-4 p-4 shadowgit ", i === 3 || i === 6 ? "md:col-span-2" : "")}
+          className={cn("flex flex-col space-y-4 p-4 shadow", i === 3 || i === 6 ? "md:col-span-2" : "")}
         />
       )) : Array(4).fill(null).map((_, index) => (
         <BentoGridItem
