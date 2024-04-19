@@ -1,7 +1,3 @@
-To encourage collaboration and make it easy for others to contribute to your project, you can add a section to your README that explains how contributors can create their own branches for development. Here's an improved version of the README with a new section on contributing:
-
----
-
 # sleepcatch
 
 An AI-powered platform designed to summarize the latest news so you can catch up quickly on what you've missed while sleeping—developed as the capstone project for the Encode Club's 6-week AI bootcamp.
@@ -9,14 +5,14 @@ An AI-powered platform designed to summarize the latest news so you can catch up
 ## 🔍 Overview
 
 - 🧱 [Stack](#-stack)
-- 🚀 [Quickstart](#-quickstart)
+- 🚀 [Getting Started](#-getting-started)
 - 🌐 [Deploy](#-deploy)
 - 📚 [Background](#-background)
 - 💡 [Contributing](#-contributing)
 
 ## 🧱 Stack
 
-- **App framework**: [Next.js](https://nextjs.org/) - A React framework for building user interfaces with server-side rendering and generating static websites.
+- **App Framework**: [Next.js](https://nextjs.org/) - A React framework for building user interfaces with server-side rendering and generating static websites.
 - **UI Components**:
   - [shadcn/ui](https://ui.shadcn.com/) - A component library to build fast and responsive interfaces.
   - [aceternity/ui](https://ui.aceternity.com/) - Provides sleek, modular UI components for rapid application development.
@@ -30,9 +26,9 @@ An AI-powered platform designed to summarize the latest news so you can catch up
   - [Turso](#) - Our SQL database for managing application data efficiently.
 - **CLI Tools**: [Kirimase.dev](https://kirimase.dev/) - Enhances Next.js app development by integrating tools and scaffolding project resources quickly.
 
-## 🚀 Quickstart
+## 🚀 Getting Started
 
-1. **Fork and Clone the Repo**
+1. **Fork and Clone the Repository**
    Fork the repository to your GitHub account, then clone it locally:
    ```bash
    git clone git@github.com/ryanlise/sleepcatch.git
@@ -53,6 +49,45 @@ An AI-powered platform designed to summarize the latest news so you can catch up
    npm run dev
    ```
    Navigate to `http://localhost:3000` to see the application in action.
+
+Key Directories:
+src/app/: This directory contains the main application logic, including pages and layout components. It's central to the frontend logic of the application.
+src/components/: This directory houses reusable UI components that can be used throughout the application, helping maintain consistency and reduce code duplication.
+src/hooks/: Includes custom React hooks, such as useFetchArticles for fetching news articles, centralizing and reusing logic across components.
+src/lib/: Contains utility functions and libraries, including authentication helpers, supporting the application's backend interactions and configurations.
+.
+├── src
+│   ├── app
+│   │   ├── api
+│   │   │   └── get_summary
+│   │   │       └── route.ts
+│   │   ├── globals.css
+│   │   └── layout.tsx
+│   ├── components
+│   │   ├── Griddy.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── Sidebar.tsx
+│   │   ├── SidebarItems.tsx
+│   │   └── ThemeProvider.tsx
+│   ├── config
+│   │   └── nav.ts
+│   ├── hooks
+│   │   └── useFetchArticles.ts
+│   ├── lib
+│       ├── db
+│       │   ├── migrations
+│       │   │   ├── 0000_silky_malice.sql
+│       │   │   └── meta
+│       │   │       └── 0000_snapshot.json
+│       │   └── migrate.ts
+│       └── utils.ts
+│   
+│       
+├── .gitignore
+├── package.json
+├── postcss.config.mjs
+├── tailwind.config.ts
+└── tsconfig.json
 
 ## 🌐 Deploy
 
@@ -99,3 +134,4 @@ We welcome contributions from the community. To contribute:
 
 5. **Create a Pull Request**
    Go to the original repository and you'll see a prompt to open a pull request from your newly pushed branch. Follow the on-screen instructions to create a pull request.
+
