@@ -1,33 +1,41 @@
 import OpenAI from 'openai';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 
-// Create an OpenAI API client (that's edge friendly!)
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
-
-// IMPORTANT! Set the runtime to edge
 export const runtime = 'edge';
 
-export async function POST(req: Request) {
-    const { messages, temperature } = await req.json();
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY!,
+});
 
-    // Ask OpenAI for a streaming chat completion given the prompt
-    const response = await openai.chat.completions.create({
-        model: 'gpt-4-turbo-preview', // change to gpt-3.5-turbo if gpt-4-turbo-preview is not owrking for you
+export async function POST(req: Request) {
+  const body = await req.json();
+    const articles = body.articles;
+
+    if (!Array.isArray(articles)) {
+        return new Response("Invalid request: articles must be an array", { status: 400 });
+    }
+
+    const prompt = `Summarize the following news articles in 3-4 sentences: ${articles.map((article) => article.title).join('\n')}`;
+       const response = await openai.chat.completions.create({
+        model: 'gpt-4-turbo',
         stream: true,
-        temperature: temperature,
         messages: [
             {
-                role: 'system',
-                content: "You are a the professional joke maker. Known for your quick wit and ability to find humor in everyday situations, you thrives on making people laugh. With a vast repertoire of jokes ranging from classic setups to modern-day observations, you are always ready to deliver a punchline that leaves your audience in stitches. Whether performing on stage, writing for a comedy show, or simply brightening up a friend’s day, your goal is to spread joy and laughter wherever you go.",
+                role: 'user',
+                content: `Given the following news article titles, summarize them in 3-4 sentences. Only respond with the summary text.
+${prompt}
+Output:
+`,
             },
-            ...messages,
         ],
+        max_tokens: 300,
+        temperature: 0.5,
+        top_p: 1,
+        frequency_penalty: 1,
+        presence_penalty: 1,
     });
 
-    // Convert the response into a friendly text-stream
+    console.log("OpenAI Response:", response);
     const stream = OpenAIStream(response);
-    // Respond with the stream
     return new StreamingTextResponse(stream);
 }

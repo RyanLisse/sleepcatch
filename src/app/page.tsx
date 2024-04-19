@@ -9,7 +9,7 @@ export default async function Home() {
         <main className="space-y-6">
 
             <Griddy />
-            <Chat />
+
         </main>
     );
 }
