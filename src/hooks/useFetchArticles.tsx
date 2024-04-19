@@ -20,7 +20,6 @@ export const useFetchArticles = (): ArticlesState => {
       console.log("Starting to fetch news...");
       try {
         const response = await fetch(`https://newsapi.org/v2/everything?q=technology&pageSize=7&from=2024-04-18&sortBy=popularity&apiKey=63a46cc52d4f40998f773ecc0e389e51`);
-        console.log("Received response from News API");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -41,4 +40,4 @@ export const useFetchArticles = (): ArticlesState => {
   }, []);
 
   return state;
-};
+}
