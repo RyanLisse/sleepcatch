@@ -72,14 +72,14 @@ const SidebarLink = ({
     <Link
       href={link.href}
       className={`group transition-colors p-2 inline-block hover:bg-popover hover:text-primary text-muted-foreground text-xs hover:shadow rounded-md w-full${
-        active ? " text-primary font-semibold" : ""
+        active ? " text-secondary-foreground font-semibold" : ""
       }`}
     >
       <div className="flex items-center">
         <div
           className={cn(
             "opacity-0 left-0 h-6 w-[4px] absolute rounded-r-lg bg-primary",
-            active ? "opacity-100" : "",
+            active ? "opacity-75" : "",
           )}
         />
         <link.icon className="h-3.5 mr-1" />

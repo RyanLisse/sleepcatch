@@ -11,9 +11,9 @@ const Sidebar = async () => {
   if (session.session === null) return null;
 
   return (
-    <aside className="h-screen  min-w-52  hidden md:block p-4 pt-8 border-r border-border shadow-inner">
+    <aside className="h-screen bg-muted min-w-52  hidden md:block p-4 pt-8 border-r border-border shadow-inner">
       <div className="flex flex-col justify-between h-full">
-        <div className="space-y-4">
+        <div className="space-y-4 ">
           <h3 className="text-lg font-bold font-mono ml-4">SLEEPCATCH</h3>
           <SidebarItems />
         </div>
