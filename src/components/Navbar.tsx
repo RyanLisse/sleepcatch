@@ -15,8 +15,7 @@ export default function Navbar() {
   return (
     <div className="md:hidden border-b mb-4 pb-2 w-full">
       <nav className="flex justify-between w-full items-center">
-        <div className="font-semibold text-lg">Logo</div>
-        <Button variant="ghost" onClick={() => setOpen(!open)}>
+  <h3 className="text-lg font-bold font-mono ml-4">SLEEPCATCH</h3>        <Button variant="ghost" onClick={() => setOpen(!open)}>
           <AlignRight />
         </Button>
       </nav>
