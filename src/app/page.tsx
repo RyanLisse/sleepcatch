@@ -1,15 +1,20 @@
-import {getUserAuth} from "@/lib/auth/utils";
+"use client"
 
-import Griddy from "@/components/Griddy";
+import { useState } from "react"
+import { getUserAuth } from "@/lib/auth/utils"
+import SelectOptionbar from "@/components/SelectOptionbar"
+import Griddy from "@/components/Griddy"
 
+export default function Home() {
+  const [selectedTopic, setSelectedTopic] = useState<string>("world")
 
-export default async function Home() {
-    const userAuth = await getUserAuth();
-    return (
-        <main className="space-y-6">
-
-            <Griddy />
-
-        </main>
-    );
+  return (
+    <main className="space-y-6">
+      <SelectOptionbar
+        selectedTopic={selectedTopic}
+        setSelectedTopic={setSelectedTopic}
+      />
+      <Griddy selectedTopic={selectedTopic} />
+    </main>
+  )
 }

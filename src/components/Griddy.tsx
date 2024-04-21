@@ -1,45 +1,47 @@
-"use client";
-import React, { useState, useEffect } from 'react';
-import { BentoGrid, BentoGridItem } from "@/components/bento-grid";
-import { cn } from "@/lib/utils";
+"use client"
+import React, { useState, useEffect } from "react"
+import { BentoGrid, BentoGridItem } from "@/components/bento-grid"
+import { cn } from "@/lib/utils"
+import Image from "next/image"
+import { GriddyProps } from "@/lib/types"
 
 interface Article {
-  title: string;
-  description: string;
-  urlToImage?: string;
+  title: string
+  description: string
+  urlToImage?: string
 }
 
 const Skeleton = () => (
   <div className="animate-pulse flex flex-1 w-full h-full min-h-[6rem] bg-gradient-to-br from-gray-300 to-gray-100 rounded-xl"></div>
-);
+)
 
-const Griddy = () => {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+const Griddy = ({ selectedTopic }: GriddyProps) => {
+  const [articles, setArticles] = useState<Article[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('/api/get_articles');
+        const response = await fetch("/api/get_articles")
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`HTTP error! status: ${response.status}`)
         }
-        const data = await response.json();
-        setArticles(data.articles);
+        const data = await response.json()
+        setArticles(data.articles)
       } catch (error) {
-        console.error('Error fetching articles:', error);
-        setError('Failed to load articles');
+        console.error("Error fetching articles:", error)
+        setError("Failed to load articles")
       } finally {
-        setIsLoading(false);
+        setIsLoading(false)
       }
-    };
+    }
 
-    fetchArticles();
-  }, []);
+    fetchArticles()
+  }, [selectedTopic])
 
-  if (error) return <div>{error}</div>;
-  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>
+  if (isLoading) return <div>Loading...</div>
 
   return (
     <BentoGrid className="max-w-6xl mx-auto">
@@ -51,9 +53,11 @@ const Griddy = () => {
           header={
             <div className="flex justify-center items-center w-full h-48 rounded-xl overflow-hidden">
               <img
-                src={article.urlToImage || 'https://via.placeholder.com/150'}
+                src={article.urlToImage || "https://via.placeholder.com/150"}
                 alt="Article"
                 className="w-full h-full object-cover"
+                width="0"
+                height="0"
               />
             </div>
           }
@@ -76,7 +80,7 @@ const Griddy = () => {
             />
           ))}
     </BentoGrid>
-  );
-};
+  )
+}
 
-export default Griddy;
+export default Griddy
