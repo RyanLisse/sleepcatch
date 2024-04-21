@@ -1,15 +1,16 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
-import { newsdata } from "../lib/data/newsdata"
+import React, { useState } from "react"
+import { newsdata } from "@/lib/data/newsdata"
 import {
   Select,
   SelectTrigger,
   SelectValue,
   SelectContent,
   SelectItem,
-} from "../components/ui/select"
-import { SelectOptionbarProps } from "@/lib/types"
+} from "@/components/ui/select"
+import {SelectOptionbarProps} from "@/lib/types";
+
 
 export default function SelectOptionbar({
   selectedTopic,
@@ -35,9 +36,9 @@ export default function SelectOptionbar({
     <div className="flex flex-row w-full h-20  ">
       <div onClick={() => setIsActive(true)}>
         <Select
-          onValueChange={(value) => {
+          onValueChange={async(value) => {
             setSelectedTopic(value)
-            topicSelect(value)
+           await topicSelect(value)
           }}
         >
           <SelectTrigger>
