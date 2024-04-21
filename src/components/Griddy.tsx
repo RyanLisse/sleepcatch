@@ -3,13 +3,9 @@ import React, { useState, useEffect } from "react"
 import { BentoGrid, BentoGridItem } from "@/components/bento-grid"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
-import { GriddyProps } from "@/lib/types"
+import {Article, GriddyProps} from "@/lib/types"
 
-interface Article {
-  title: string
-  description: string
-  urlToImage?: string
-}
+
 
 const Skeleton = () => (
   <div className="animate-pulse flex flex-1 w-full h-full min-h-[6rem] bg-gradient-to-br from-gray-300 to-gray-100 rounded-xl"></div>
