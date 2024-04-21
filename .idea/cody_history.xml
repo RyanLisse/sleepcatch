@@ -124,6 +124,41 @@
             </llm>
           </llm>
         </chat>
+        <chat>
+          <accountId value="VXNlcjoxMDQ4Njg=" />
+          <internalId value="4c65aae7-24ef-4c76-abe0-33f2cf93e087" />
+          <llm>
+            <llm>
+              <model value="anthropic/claude-3-sonnet-20240229" />
+              <provider value="Anthropic" />
+              <title value="Claude 3 Sonnet" />
+            </llm>
+          </llm>
+        </chat>
+        <chat>
+          <accountId value="VXNlcjoxMDQ4Njg=" />
+          <internalId value="a3bb6e43-58fb-447e-8369-0e3f1383e01e" />
+          <llm>
+            <llm>
+              <model value="anthropic/claude-3-sonnet-20240229" />
+              <provider value="Anthropic" />
+              <title value="Claude 3 Sonnet" />
+            </llm>
+          </llm>
+          <messages>
+            <list>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="give me the javascript function that gives me the current date in this format: 2024-04-18" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+                <text value="Here's a JavaScript function that returns the current date in the format &quot;YYYY-MM-DD&quot;:&#10;&#10;```javascript&#10;function getCurrentDate() {&#10;  const today = new Date();&#10;  const year = today.getFullYear();&#10;  const month = String(today.getMonth() + 1).padStart(2, '0');&#10;  const day = String(today.getDate()).padStart(2, '0');&#10;  const formattedDate = `${year}-${month}-${day}`;&#10;  return formattedDate;&#10;}&#10;```&#10;&#10;To use this function, simply call it:&#10;&#10;```javascript&#10;const currentDate = getCurrentDate();&#10;console.log(currentDate); // Output: &quot;2023-05-18&quot; (or the current date)&#10;```&#10;&#10;Here's how the `getCurrentDate` function works:&#10;&#10;1. `const today = new Date();` creates a new `Date` object representing the current date and time.&#10;2. `const year = today.getFullYear();` gets the current year as a four-digit number (e.g., 2023).&#10;3. `const month = String(today.getMonth() + 1).padStart(2, '0');` gets the current month as a zero-padded two-digit number (e.g., &quot;05&quot; for May). The `getMonth()` method returns a zero-based index (0 for January, 1 for February, etc.), so we add 1 to get the actual month number. The `padStart(2, '0')` method ensures that single-digit months are padded with a leading zero.&#10;4. `const day = String(today.getDate()).padStart(2, '0');` gets the current day of the month as a zero-padded two-digit number (e.g., &quot;18&quot; for the 18th day of the month). The `padStart(2, '0')` method ensures that single-digit days are padded with a leading zero.&#10;5. `const formattedDate = `${year}-${month}-${day}`;` constructs the formatted date string by concatenating the year, month, and day with hyphens in between.&#10;6. `return formattedDate;` returns the formatted date string.&#10;&#10;Note that this function returns the current date in the local time zone of the user's machine. If you need to handle different time zones or use a specific time zone, you may need to adjust the code accordingly." />
+              </message>
+            </list>
+          </messages>
+          <updatedAt value="2024-04-21T16:59:15.170901" />
+        </chat>
       </list>
     </chats>
     <defaultLlm>
