@@ -21,21 +21,21 @@ const Griddy = ({ selectedTopic }: GriddyProps) => {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const response = await fetch("/api/get_articles")
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        const data = await response.json()
-        setArticles(data.articles)
-      } catch (error) {
-        console.error("Error fetching articles:", error)
-        setError("Failed to load articles")
-      } finally {
-        setIsLoading(false)
-      }
+   const fetchArticles = async () => {
+  try {
+    const response = await fetch(`/api/get_articles?topic=${selectedTopic}`)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
     }
+    const data = await response.json()
+    setArticles(data.articles)
+  } catch (error) {
+    console.error("Error fetching articles:", error)
+    setError("Failed to load articles")
+  } finally {
+    setIsLoading(false)
+  }
+}
 
     fetchArticles()
   }, [selectedTopic])

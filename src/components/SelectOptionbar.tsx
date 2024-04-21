@@ -32,7 +32,7 @@ export default function SelectOptionbar({
   }
 
   return (
-    <div className="flex flex-row w-full h-20 bg-slate-50 ">
+    <div className="flex flex-row w-full h-20  ">
       <div onClick={() => setIsActive(true)}>
         <Select
           onValueChange={(value) => {
