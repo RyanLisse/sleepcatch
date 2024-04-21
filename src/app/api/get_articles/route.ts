@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
     const sortBy = 'popularity';
     const today = new Date();
     const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0'); at 0
+    const month = String(today.getMonth() + 1).padStart(2, '0'); 
     const day = String(today.getDate() - 1).padStart(2, '0'); 
     const from = `${year}-${month}-${day}`;
 
