@@ -53,12 +53,25 @@ An AI-powered platform designed to summarize the latest news efficiently, allowi
    npm run dev
    ```
 
-   Access the app by navigating to `http://localhost:3000
-Key Directories:
-src/app/: This directory contains the main application logic, including pages and layout components. It's central to the frontend logic of the application.
-src/components/: This directory houses reusable UI components that can be used throughout the application, helping maintain consistency and reduce code duplication.
-src/hooks/: Includes custom React hooks, such as useFetchArticles for fetching news articles, centralizing and reusing logic across components.
-src/lib/: Contains utility functions and libraries, including authentication helpers, supporting the application's backend interactions and configurations.
+## Access the Application
+
+Navigate to the application using the following URL:
+`http://localhost:3000`
+
+## Key Directories
+
+- **src/app/**:
+    - This directory contains the main application logic, including pages and layout components.
+    - It's central to the frontend logic of the application.
+
+- **src/components/**:
+    - This directory houses reusable UI components that can be used throughout the application.
+    - Helps maintain consistency and reduce code duplication.
+
+
+- **src/lib/**:
+    - Contains utility functions and libraries, such as authentication helpers.
+    - Supports the application's backend interactions and configurations.
 
 
 ## 📡 API Flow
