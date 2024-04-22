@@ -61,6 +61,9 @@ src/hooks/: Includes custom React hooks, such as useFetchArticles for fetching n
 src/lib/: Contains utility functions and libraries, including authentication helpers, supporting the application's backend interactions and configurations.
 
 
+## 📡 API Flow
+
+![mermaid-flow](https://github.com/RyanLisse/sleepcatch/assets/57917217/06eca4fa-f849-4750-870f-e03c35e72790)
 
 ## 🌐 Deploy
 
@@ -102,6 +105,7 @@ Contributions are welcomed! To get involved:
 4. **Push Changes**
    ```bash
    git push origin your-branch-name
+   
    ```
 
 5. **Create a Pull Request**
