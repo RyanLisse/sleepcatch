@@ -8,6 +8,15 @@ export interface Article {
   urlToImage?: string
 }
 
-export type GriddyProps = {
+export interface GriddyProps {
   selectedTopic: string;
+  setTrack: (track: Track) => void;
+  tracksHash?: { [key: string]: Track };
+  setTracksHash?: (tracks: { [key: string]: Track }) => void
 };
+
+export interface Track {
+  title: string;
+  url: string;
+  tags: string[];
+}
