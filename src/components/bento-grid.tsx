@@ -40,7 +40,7 @@ export const BentoGridItem = ({
     icon?: React.ReactNode;
     setTrack?: (track: Track) => void;
     tracksHash?: { [key: string]: Track };
-    setTracksHash?: (tracks: { [key: string]: Track }) => void
+    setTracksHash?: (tracks: { [key: string]: Track }) => void;
 }) => {
     const [audioIsLoading, setAudioIsLoading] = useState(false);
 

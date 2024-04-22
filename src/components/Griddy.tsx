@@ -9,12 +9,7 @@ const Skeleton = () => (
   <div className="animate-pulse flex flex-1 w-full h-full min-h-[6rem] bg-gradient-to-br from-gray-300 to-gray-100 rounded-xl"></div>
 )
 
-const Griddy = ({ selectedTopic, setTrack, tracksHash, setTracksHash }: {
-  selectedTopic: GriddyProps
-  setTrack: (track: Track) => void,
-  tracksHash?: { [key: string]: Track };
-  setTracksHash?: (tracks: { [key: string]: Track }) => void
-}) => {
+const Griddy = ({ selectedTopic, setTrack, tracksHash, setTracksHash }: GriddyProps) => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
