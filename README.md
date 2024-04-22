@@ -21,7 +21,8 @@ An AI-powered platform designed to summarize the latest news efficiently, allowi
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework designed for quickly creating bespoke designs.
 - **API Integration**:
     - [OpenAI](https://openai.com/) - Delivers scalable generative models.
-    - [NewsAPI](https://newsapi.org/) - Fetches real-time news articles from various sources.
+    - [NewsAPI](https://newsapi.org/) - Fetches news articles from various sources.
+    - [NewsCatcherApi](https://www.newscatcherapi.com/) - Fetches real-time news articles from various sources.
 - **Animation Library**: [Framer Motion](https://www.framer.com/motion/) - Enables sophisticated animations in React applications.
 - **Database and ORM**:
     - Turso - Manages application data effectively.[Learn more about Turso](https://turso.tech/)
