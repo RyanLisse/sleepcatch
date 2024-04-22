@@ -11,3 +11,9 @@ export interface Article {
 export type GriddyProps = {
   selectedTopic: string;
 };
+
+export interface Track {
+  title: string;
+  url: string;
+  tags: string[];
+}

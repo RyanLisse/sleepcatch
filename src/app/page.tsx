@@ -1,20 +1,39 @@
 "use client"
 
-import { useState } from "react"
-import { getUserAuth } from "@/lib/auth/utils"
+import { useState, useEffect } from "react";
 import SelectOptionbar from "@/components/SelectOptionbar"
 import Griddy from "@/components/Griddy"
+import Player from "@/components/Player";
+import { AuthSession, getUserAuth } from "@/lib/auth/utils";
+import { Track } from "@/lib/types";
 
 export default function Home() {
-  const [selectedTopic, setSelectedTopic] = useState<string>("world")
+    const [userAuth, setUserAuth] = useState<AuthSession | null>(null);
+    const [track, setTrack] = useState<Track | null>(null);
+    const [tracksHash, setTracksHash] = useState<{ [key: string]: Track }>({});
+    const [selectedTopic, setSelectedTopic] = useState<string>("world")
 
-  return (
-    <main className="space-y-6">
-      <SelectOptionbar
-        selectedTopic={selectedTopic}
-        setSelectedTopic={setSelectedTopic}
-      />
-      <Griddy selectedTopic={selectedTopic} />
-    </main>
-  )
+    useEffect(() => {
+        const fetchUserAuth = async () => {
+            const auth = await getUserAuth();
+            setUserAuth(auth);
+        };
+        fetchUserAuth();
+    }, []);
+
+    return (
+        <main className="space-y-6">
+            <Player track={track} />
+            <SelectOptionbar
+                selectedTopic={selectedTopic}
+                setSelectedTopic={setSelectedTopic}
+            />
+            <Griddy
+                selectedTopic={selectedTopic}
+                setTrack={setTrack}
+                setTracksHash={setTracksHash}
+                tracksHash={tracksHash}
+            />
+        </main>
+    )
 }

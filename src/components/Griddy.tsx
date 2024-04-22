@@ -3,18 +3,21 @@ import React, { useState, useEffect } from "react"
 import { BentoGrid, BentoGridItem } from "@/components/bento-grid"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
-import {Article, GriddyProps} from "@/lib/types"
-
-
+import {Article, GriddyProps, Track} from "@/lib/types"
 
 const Skeleton = () => (
   <div className="animate-pulse flex flex-1 w-full h-full min-h-[6rem] bg-gradient-to-br from-gray-300 to-gray-100 rounded-xl"></div>
 )
 
-const Griddy = ({ selectedTopic }: GriddyProps) => {
-  const [articles, setArticles] = useState<Article[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+const Griddy = ({ selectedTopic, setTrack, tracksHash, setTracksHash }: {
+  selectedTopic: GriddyProps
+  setTrack: (track: Track) => void,
+  tracksHash?: { [key: string]: Track };
+  setTracksHash?: (tracks: { [key: string]: Track }) => void
+}) => {
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
    const fetchArticles = async () => {
@@ -61,6 +64,9 @@ const Griddy = ({ selectedTopic }: GriddyProps) => {
             "flex flex-col space-y-4 p-4 shadow",
             i === 3 || i === 6 ? "md:col-span-2" : ""
           )}
+          setTrack={setTrack}
+          tracksHash={tracksHash}
+          setTracksHash={setTracksHash}
         />
       ))}
       {isLoading &&
