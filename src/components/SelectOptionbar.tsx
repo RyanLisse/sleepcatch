@@ -12,6 +12,8 @@ import {
 import {SelectOptionbarProps} from "@/lib/types";
 
 
+
+
 export default function SelectOptionbar({
   selectedTopic,
   setSelectedTopic,
@@ -19,6 +21,7 @@ export default function SelectOptionbar({
   const [isActive, setIsActive] = useState<boolean>(false)
 
   console.log(selectedTopic)
+
 
   const topicSelect = async (topic: string) => {
     console.log("triggered")
@@ -39,6 +42,8 @@ export default function SelectOptionbar({
           onValueChange={async(value) => {
             setSelectedTopic(value)
            await topicSelect(value)
+                     
+
           }}
         >
           <SelectTrigger>

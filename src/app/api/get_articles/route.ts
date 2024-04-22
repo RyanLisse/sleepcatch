@@ -15,8 +15,7 @@ export async function GET(request: NextRequest) {
   const day = String(today.getDate() - 1).padStart(2, '0');
   const from = `${year}-${month}-${day}`;
 
-  // Use pageSize from 'paulman' branch for more results, sorted by popularity
-  const pageSize = 21;
+  const pageSize = 7;
   const sortBy = "popularity";
 
   const url = `${baseUrl}?q=${topic}&pageSize=${pageSize}&from=${from}&sortBy=${sortBy}&apiKey=${API_KEY}`;

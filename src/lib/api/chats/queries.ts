@@ -1,4 +1,4 @@
-import { db } from "@/lib/db/index";
+import { db } from "@/lib/db";
 import { eq, and } from "drizzle-orm";
 import { getUserAuth } from "@/lib/auth/utils";
 import { type ChatId, chatIdSchema, chats } from "@/lib/db/schema/chats";
@@ -15,4 +15,3 @@ export const getChatById = async (id: ChatId) => {
   const [c] = await db.select().from(chats).where(and(eq(chats.id, chatId), eq(chats.userId, session?.user.id!)));
   return { chat: c };
 };
-

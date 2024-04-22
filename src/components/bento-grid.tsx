@@ -1,43 +1,46 @@
-import { cn } from "@/lib/utils";
-import { CirclePlay, Loader } from "lucide-react";
-import { Button } from "./ui/moving-border";
-import { useState } from "react";
-import { Track } from "@/lib/types";
+import {cn} from "@/lib/utils";
+import {CirclePlay, Loader} from "lucide-react";
+import {Button} from "./ui/moving-border";
+import React, {useState} from "react";
+import {Track} from "@/lib/types";
+import Link from "next/link";
 
 export const BentoGrid = ({
-    className,
-    children,
-}: {
+                              className,
+                              children,
+                          }: {
     className?: string;
     children?: React.ReactNode;
 }) => {
-  return (
-    <div
-      className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ",
-        className
-      )}
-    >
-      {children}
-    </div>
-  )
+    return (
+        <div
+            className={cn(
+                "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ",
+                className
+            )}
+        >
+            {children}
+        </div>
+    )
 }
 
 export const BentoGridItem = ({
-    className,
-    title,
-    description,
-    header,
-    icon,
-    setTrack,
-    tracksHash,
-    setTracksHash,
-}: {
+                                  className,
+                                  title,
+                                  description,
+                                  header,
+                                  icon,
+                                  url,
+                                  setTrack,
+                                  tracksHash,
+                                  setTracksHash,
+                              }: {
     className?: string;
     title?: string | React.ReactNode;
     description?: string | React.ReactNode;
     header?: React.ReactNode;
     icon?: React.ReactNode;
+    url?: string;
     setTrack?: (track: Track) => void;
     tracksHash?: { [key: string]: Track };
     setTracksHash?: (tracks: { [key: string]: Track }) => void;
@@ -77,7 +80,7 @@ export const BentoGridItem = ({
                 url: audioUrl,
                 tags: [],
             }
-            const newTrackHash: {[key: string]: Track} = {
+            const newTrackHash: { [key: string]: Track } = {
                 ...tracksHash,
                 [(title as string).concat(' ')]: track,
             };
@@ -100,9 +103,11 @@ export const BentoGridItem = ({
             {header}
             <div className="group-hover/bento:translate-x-2 transition duration-200">
                 {icon}
-                <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
+                <Link href={url || '#'}
+                      className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
                     {title}
-                </div>
+
+                </Link>
                 <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300 mb-2">
                     {description}
                 </div>
@@ -113,7 +118,7 @@ export const BentoGridItem = ({
                 >
                     <span className="pr-1">Listen</span>
                     <span className="text-white">
-                        {audioIsLoading ? <Loader /> : <CirclePlay />}
+                        {audioIsLoading ? <Loader/> : <CirclePlay/>}
                     </span>
                 </Button>
             </div>
