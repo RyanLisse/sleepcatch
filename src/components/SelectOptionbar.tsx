@@ -9,19 +9,21 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select"
-import {SelectOptionbarProps} from "@/lib/types";
+import { Button } from "./ui/button"
+import { SelectOptionbarProps, LoadingProps } from "@/lib/types"
 
-
-
+interface SelectOptionbarPropsWithLoading
+  extends SelectOptionbarProps,
+    LoadingProps {}
 
 export default function SelectOptionbar({
   selectedTopic,
   setSelectedTopic,
-}: SelectOptionbarProps) {
+  setIsLoading,
+}: SelectOptionbarPropsWithLoading) {
   const [isActive, setIsActive] = useState<boolean>(false)
 
   console.log(selectedTopic)
-
 
   const topicSelect = async (topic: string) => {
     console.log("triggered")
@@ -36,14 +38,12 @@ export default function SelectOptionbar({
   }
 
   return (
-    <div className="flex flex-row w-full h-20  ">
+    <div className="flex flex-row w-full h-20 gap-10 ">
       <div onClick={() => setIsActive(true)}>
         <Select
-          onValueChange={async(value) => {
+          onValueChange={async (value) => {
             setSelectedTopic(value)
-           await topicSelect(value)
-                     
-
+            await topicSelect(value)
           }}
         >
           <SelectTrigger>
@@ -59,6 +59,18 @@ export default function SelectOptionbar({
             </SelectContent>
           )}
         </Select>
+      </div>
+      <div>
+        <Button
+          onClick={async () => {
+            setIsLoading(true)
+            await new Promise((resolve) => setTimeout(resolve, 500))
+            await topicSelect(selectedTopic)
+            setIsLoading(false)
+          }}
+        >
+          Refresh content
+        </Button>
       </div>
     </div>
   )
