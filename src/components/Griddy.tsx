@@ -84,10 +84,7 @@ const Griddy = ({
               </Link>
             </div>
           }
-          className={cn(
-            "flex flex-col space-y-4 p-4 shadow",
-            i === 3 || i === 6 ? "md:col-span-2" : ""
-          )}
+          className="flex flex-col space-y-4 p-4 shadow"
           setTrack={setTrack}
           tracksHash={tracksHash}
           setTracksHash={setTracksHash}
