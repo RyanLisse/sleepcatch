@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { AccountCard, AccountCardBody, AccountCardFooter } from '../../../../../sleepcatch/src/app/account/AccountCard';
+import { AccountCard, AccountCardBody, AccountCardFooter } from './AccountCard';
 import { LabeledCheckbox } from '@/components/ui/labeledCheckbox';  // Ensure this import is correct
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { useTransition } from 'react';
-import { FormSubmitHandler } from '../../../../../sleepcatch/src/app/account/accountTypes';
+import { FormSubmitHandler } from './accountTypes';
 import Tooltip from './Tooltip';
 
 export default function NotificationPreferencesCard() {

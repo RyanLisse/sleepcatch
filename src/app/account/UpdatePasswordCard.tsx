@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AccountCard, AccountCardBody, AccountCardFooter } from '../../../../../sleepcatch/src/app/account/AccountCard';
+import { AccountCard, AccountCardBody, AccountCardFooter } from './AccountCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';

@@ -45,13 +45,14 @@ export default function UpdateNameCard({ name }: { name: string }) {
       }}
     >
       <form onSubmit={handleSubmit}>
-        <AccountCardBody>
-          <Tooltip text="This has to be your real Name until we added a Nickname feature.">
-            <Input defaultValue={name ?? ""} name="name" disabled={false} />
-          </Tooltip>
-        </AccountCardBody>
+        <Tooltip text="This has to be your real Name until we added a Nickname feature.">
+          <AccountCardBody>
+            <Input defaultValue={name ?? ""} name="name" disabled={true} />
+          </AccountCardBody>
+        </Tooltip>
+        
         <AccountCardFooter description="64 characters maximum">
-          <Button disabled={false}>Update Name</Button>
+          <Button disabled={true}>Update Name</Button>
         </AccountCardFooter>
       </form>
     </AccountCard>

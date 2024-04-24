@@ -1,9 +1,9 @@
 import React from 'react';
-import { AccountCard, AccountCardBody, AccountCardFooter } from '../../../../../sleepcatch/src/app/account/AccountCard';
+import { AccountCard, AccountCardBody, AccountCardFooter } from './AccountCard';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { useTransition } from 'react';
-import { PrivacySettings, FormSubmitHandler } from '../../../../../sleepcatch/src/app/account/accountTypes';
+import { PrivacySettings, FormSubmitHandler } from './accountTypes';
 import { LabeledCheckbox } from '@/components/ui/labeledCheckbox';
 import Tooltip from './Tooltip';
 

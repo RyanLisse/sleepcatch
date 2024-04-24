@@ -40,17 +40,18 @@ export default function UpdateEmailCard({ email }: { email: string }) {
     <AccountCard
       params={{
         header: "Your Email",
-        description: "Please enter the email address you want to use with your account.",
+        description: 
+          "Please enter the email address you want to use with your account.",
       }}
     >
       <form onSubmit={handleSubmit}>
-        <AccountCardBody>
-          <Tooltip text="Make sure to use an email you frequently check as important account notifications will be sent here.">
-            <Input defaultValue={email ?? ""} name="email" disabled={false} />
-          </Tooltip>
-        </AccountCardBody>
-        <AccountCardFooter description="We will email you to verify the change.">
-          <Button disabled={false}>Update Email</Button>
+        <Tooltip text="Make sure to use an email you frequently check as important account notifications will be sent here.">
+          <AccountCardBody>
+            <Input defaultValue={email ?? ""} name="email" disabled={true} />
+          </AccountCardBody>
+        </Tooltip>
+        <AccountCardFooter description="We will email vou to verify the change.">
+          <Button disabled={true}>Update Email</Button>
         </AccountCardFooter>
       </form>
     </AccountCard>
