@@ -26,8 +26,8 @@ export const newsdata = [
   },
   {
     id: 5,
-    value: "businesss",
-    title: "Businesss",
+    value: "business",
+    title: "Business",
   },
   {
     id: 6,

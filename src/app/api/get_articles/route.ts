@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
   const from = `${year}-${month}-${day}`;
 
   // Use pageSize from 'paulman' branch for more results, sorted by popularity
-  const pageSize = 21;
+  const pageSize = 10;
   const sortBy = "popularity";
 
   const url = `${baseUrl}?q=${topic}&pageSize=${pageSize}&from=${from}&sortBy=${sortBy}&apiKey=${API_KEY}`;
