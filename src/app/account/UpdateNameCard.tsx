@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
+import Tooltip from './Tooltip';
 
 export default function UpdateNameCard({ name }: { name: string }) {
   const { toast } = useToast();
@@ -44,9 +45,12 @@ export default function UpdateNameCard({ name }: { name: string }) {
       }}
     >
       <form onSubmit={handleSubmit}>
-        <AccountCardBody>
-          <Input defaultValue={name ?? ""} name="name" disabled={true} />
-        </AccountCardBody>
+        <Tooltip text="This has to be your real Name until we added a Nickname feature.">
+          <AccountCardBody>
+            <Input defaultValue={name ?? ""} name="name" disabled={true} />
+          </AccountCardBody>
+        </Tooltip>
+        
         <AccountCardFooter description="64 characters maximum">
           <Button disabled={true}>Update Name</Button>
         </AccountCardFooter>
