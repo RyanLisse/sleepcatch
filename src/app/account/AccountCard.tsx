@@ -20,7 +20,7 @@ export function AccountCard({ params, children }: AccountCardProps) {
       {children}
     </Card>
   );
-}
+} 
 
 export function AccountCardBody({ children }: { children: React.ReactNode }) {
   return <div className="p-4">{children}</div>;

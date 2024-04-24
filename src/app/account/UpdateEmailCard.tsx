@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
+import Tooltip from './Tooltip';
 
 export default function UpdateEmailCard({ email }: { email: string }) {
   const { toast } = useToast();
@@ -39,18 +40,21 @@ export default function UpdateEmailCard({ email }: { email: string }) {
     <AccountCard
       params={{
         header: "Your Email",
-        description:
-          "Please enter the email address you want to use with your account.",
+        description: "Please enter the email address you want to use with your account.",
       }}
     >
       <form onSubmit={handleSubmit}>
         <AccountCardBody>
-          <Input defaultValue={email ?? ""} name="email" disabled={true} />
+          <Tooltip text="Make sure to use an email you frequently check as important account notifications will be sent here.">
+            <Input defaultValue={email ?? ""} name="email" disabled={false} />
+          </Tooltip>
         </AccountCardBody>
-        <AccountCardFooter description="We will email vou to verify the change.">
-          <Button disabled={true}>Update Email</Button>
+        <AccountCardFooter description="We will email you to verify the change.">
+          <Button disabled={false}>Update Email</Button>
         </AccountCardFooter>
       </form>
     </AccountCard>
   );
+
 }
+
