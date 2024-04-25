@@ -1,5 +1,5 @@
-
 # Sleepcatch
+![demo](https://github.com/RyanLisse/sleepcatch/blob/main/public/sleepcatch-demo.gif?raw=true)
 
 An AI-powered platform designed to summarize the latest news efficiently, allowing you to catch up quickly on significant developments that occurred while you were away. Developed during the Encode Club's intensive 6-week AI bootcamp, Sleepcatch represents a convergence of cutting-edge technologies and innovative design.
 
