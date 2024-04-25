@@ -6,7 +6,7 @@ import {SignIn} from "@clerk/nextjs";
 export default function Aurora() {
     return (
         <div
-            className="h-[50rem] relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+            className="h-screen relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
             <div className="w-full absolute inset-0 h-screen">
                 <SparklesCore
                     id="tsparticlesfullpage"
