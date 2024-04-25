@@ -35,7 +35,7 @@ An AI-powered platform designed to summarize the latest news efficiently, allowi
 1. **Fork and Clone the Repository**
    Fork the repository to your GitHub account and clone it to your local machine:
    ```bash
-   git clone git@github.com:yourgithubusername/sleepcatch.git
+   git clone git@github.com/ryanlisse/sleepcatch.git
    cd sleepcatch
    ```
 2. **Install Dependencies**
