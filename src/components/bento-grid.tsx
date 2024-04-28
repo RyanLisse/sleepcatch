@@ -114,7 +114,14 @@ export const BentoGridItem = ({
                 <Button
                     borderRadius="2.75rem"
                     className="bg-black dark:bg-zinc-800 text-white dark:text-white border-slate-200 dark:border-slate-800"
-                    onClick={onLoadAudio}
+                                       onClick={() => {
+                        onLoadAudio();
+                        // Ensure audio plays after user interaction
+                        const audioElement = document.querySelector('audio');
+                        if (audioElement) {
+                            audioElement.play();
+                        }
+                    }}
                 >
                     <span className="pr-1">Listen</span>
                     <span className="text-white">
