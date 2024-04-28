@@ -20,9 +20,6 @@ export default function Aurora() {
             </div>
             <h1 className="md:text-7xl text-4xl lg:text-6xl py-2 font-bold text-center text-white relative z-20">
                 Welcome to SleepCatch            </h1>
-            <p className="text-lg mb-4 text-white">
-                Sign in to your account to get started.
-            </p>
             <SignIn/>
         </div>
     );
